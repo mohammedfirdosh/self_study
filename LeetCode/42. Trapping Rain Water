@@ -1,1 +1,18 @@
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        total_water_collected = 0
+        data_length = len(height)
+        for idx in range(data_length):
+            left_half = height[:idx]
+            right_half = height[idx + 1:]
+            if left_half and right_half:
+                left_max = max(left_half)
+                right_max = max(right_half)
+                #print(f"idx: {idx} | left_half: {left_half} | right_half: {right_half} | height[idx]: {height[idx]} | total_water_collected: {total_water_collected}")
+                water_trapped = min(left_max, right_max) - height[idx]
+                if water_trapped > 0:
+                    total_water_collected += water_trapped
+        
+        return total_water_collected
+
 
