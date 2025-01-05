@@ -15,4 +15,3 @@ class Solution:
         
         return total_water_collected
 
-
