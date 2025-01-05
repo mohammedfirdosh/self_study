@@ -1,1 +1,1 @@
-# leetcode
+# Self study
