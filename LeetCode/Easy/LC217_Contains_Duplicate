@@ -1,0 +1,33 @@
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        h_map = {}
+        for num in nums:
+            if num in h_map:
+                return True
+            else:
+                h_map[num] = 1
+        return False
+
+        """
+        # 8ms Beats 70.1%
+        seen = set()
+        for num in nums:
+            if num in seen:
+                return True
+            else:
+                seen.add(num)
+        return False
+        """
+        """
+        51ms Beats 5.09%
+        h_map = {}
+        for num in nums:
+            #h_map[num] = h_map.get(num, 0) + 1
+            if num in h_map:
+                h_map[num] += 1
+            else:
+                h_map[num] = 1
+
+        #print(f"H_MAP: {h_map}")
+        return any(value > 1 for value in h_map.values())
+        """
