@@ -2,6 +2,17 @@ class Solution:
     def mySqrt(self, x: int) -> int:
         # https://leetcode.com/problems/sqrtx
         
+        # 2ms 67%
+        if x < 2:
+            return x
+
+        guess = x
+        while guess * guess > x:
+            guess = (guess + x // guess) // 2
+
+        return guess
+
+        """
         # 7ms 30%
         if x < 2:
             return x
@@ -19,4 +30,5 @@ class Solution:
             else:
                 right = mid - 1
 
-        return right        
+        return right     
+        """   
