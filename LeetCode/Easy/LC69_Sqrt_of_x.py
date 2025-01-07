@@ -3,6 +3,7 @@ class Solution:
         # https://leetcode.com/problems/sqrtx
         
         # 2ms 67%
+        # Newton-Rapson Method
         if x < 2:
             return x
 
