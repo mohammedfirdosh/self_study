@@ -10,7 +10,5 @@ class Solution:
             else:
                 result = max (result, current_max)
                 current_max = 0 
-        else:
-            if num:
-                result = max (result, current_max)
-        return result
+
+        return  max (result, current_max)
