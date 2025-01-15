@@ -1,6 +1,7 @@
 class Solution:
     def dayOfTheWeek(self, day: int, month: int, year: int) -> str:
         # https://leetcode.com/problems/day-of-the-week
+        # https://github.com/doocs/leetcode/blob/main/solution/1100-1199/1185.Day%20of%20the%20Week/README_EN.md
         if month < 3:
             month += 12
             year -= 1
