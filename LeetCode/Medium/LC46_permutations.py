@@ -11,7 +11,7 @@ Recurse for the next index.
 Backtrack by swapping the elements back to restore the array.
 
 """
-# 42: https://leetcode.com/problems/permutations/
+# 46: https://leetcode.com/problems/permutations/
 
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
@@ -26,3 +26,24 @@ class Solution:
         result = list()
         helper(0)
         return result
+
+"""
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        n = len(nums)
+
+        res, sol = list(), list()
+
+        def backtrack():
+            if len(sol) == n:
+                res.append(sol[:])
+                return
+            for i in nums:
+                if i not in sol:
+                    sol.append(i)
+                    backtrack()
+                    sol.pop()
+        
+        backtrack()
+        return res
+"""
