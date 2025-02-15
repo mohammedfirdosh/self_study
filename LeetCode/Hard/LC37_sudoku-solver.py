@@ -1,4 +1,5 @@
 # 37 https://leetcode.com/problems/sudoku-solver/
+# TC: O(9 ** empty_cells)
 class Solution:
     def solveSudoku(self, board: List[List[str]]) -> None:
         """
