@@ -4,6 +4,43 @@ class Solution:
     def solveNQueens(self, n: int) -> List[List[str]]:
         board = [["." for _ in range(n)] for _ in range(n)]
         res = []
+        cols = set()
+        pos_diagonals = set()  # (row + col)
+        neg_diagonals = set()  # (row - col)
+
+        def is_safe(row, col):
+            if col in cols or (row + col) in pos_diagonals or (row - col) in neg_diagonals:
+                return False
+            return True
+
+        def place_queen(row, col):
+            board[row][col] = "Q"
+            cols.add(col)
+            pos_diagonals.add(row + col)
+            neg_diagonals.add(row - col)
+
+        def remove_queen(row, col):
+            board[row][col] = "."
+            cols.remove(col)
+            pos_diagonals.remove(row + col)
+            neg_diagonals.remove(row - col)
+
+        def backtrack(row):
+            if row == n:
+                res.append(["".join(row) for row in board])
+                return
+
+            for col in range(n):
+                if is_safe(row, col):
+                    place_queen(row, col)
+                    backtrack(row + 1)
+                    remove_queen(row, col)
+
+        backtrack(0)
+        return res
+        """
+        board = [["." for _ in range(n)] for _ in range(n)]
+        res = []
 
         def is_safe(row, col):
             # Check the row
@@ -41,3 +78,4 @@ class Solution:
 
         backtrack(0)
         return res
+        """
