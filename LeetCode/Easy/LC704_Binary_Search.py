@@ -14,7 +14,9 @@ class Solution:
             else:
                 return bs(mid + 1, end)
 
-        return bs(0, n - 1)
+        if nums[0] <= target <= nums[n - 1]:
+            return bs(0, n - 1)
+        return -1
 
         """
         # https://leetcode.com/problems/binary-search
