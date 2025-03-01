@@ -1,4 +1,6 @@
 # Merge sort
+# TC: O(n * logn)
+# SC: O(n)
 def mergeSort(arr, start, end):
     if start < end:
         mid = start + (end - start) //2
