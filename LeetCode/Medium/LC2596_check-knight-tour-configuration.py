@@ -1,4 +1,6 @@
 #2596: https://leetcode.com/problems/check-knight-tour-configuration
+# TC: O(8**n**2) 8NSqaure
+# SC: O(n**2) NSquare
 class Solution:
     def checkValidGrid(self, grid: List[List[int]]) -> bool:
         def is_valid(r, c, n, exp_val):
