@@ -1,23 +1,22 @@
-# 47 https://leetcode.com/problems/permutations-ii/
+# 47 https://leetcode.com/problems/permutations-ii/?envType=problem-list-v2&envId=backtracking
+# https://www.youtube.com/watch?v=cvOVk7kuMYg
 class Solution:
     def permuteUnique(self, nums: List[int]) -> List[List[int]]:
-        res = list()
-        h_map = {ii: nums.count(ii) for ii in nums}
-        n = len(nums)
-        sol = list()
-
-        def backtrack():
-            if len(sol) == n:
-                res.append(sol[:])
+        def backtrack(idx):
+            if idx == n:
+                result.append(nums[:])
                 return
-            for elem in h_map:
-                if h_map[elem] > 0:
-                    sol.append(elem)
-                    h_map[elem] -= 1
-                    backtrack()
 
-                    h_map[elem] += 1
-                    sol.pop()
+            unique_set = set()
+            for i in range(idx, n):
+                if nums[i] in unique_set:
+                    continue
+                unique_set.add(nums[i])
+                nums[i], nums[idx] = nums[idx], nums[i]
+                backtrack(idx + 1)
+                nums[i], nums[idx] = nums[idx], nums[i]
 
-        backtrack()
-        return res
+        n = len(nums)
+        result = list()
+        backtrack(0)
+        return result
