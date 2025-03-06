@@ -1,6 +1,30 @@
 # 15 https://leetcode.com/problems/3sum
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
+        n = len(nums)
+        result = []
+        nums.sort()
+        for ii in range(n):
+            if ii > 0 and nums[ii] == nums[ii - 1]:
+                continue
+            jj, kk = ii + 1, n - 1
+            while jj < kk:
+                sum = nums[ii] + nums[jj] + nums[kk]
+                if sum == 0:
+                    result.append([nums[ii], nums[jj], nums[kk]])
+                    while jj < kk and nums[jj] == nums[jj + 1]:
+                        jj += 1
+                    while jj < kk and nums[kk] == nums[kk - 1]:
+                        kk -= 1
+                    jj += 1
+                    kk -= 1
+                elif sum > 0:
+                    kk -= 1
+                else:
+                    jj += 1
+        return result
+        
+        """
         res = []
         nums.sort()
 
@@ -26,6 +50,7 @@ class Solution:
                         j += 1
         
         return res
+        """
 
 
 
