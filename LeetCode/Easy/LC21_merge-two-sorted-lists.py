@@ -1,4 +1,6 @@
 # LC 21: https://leetcode.com/problems/merge-two-sorted-lists/
+# TC = O(m+n)
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
