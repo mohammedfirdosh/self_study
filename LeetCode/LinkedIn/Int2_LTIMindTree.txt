@@ -1,0 +1,30 @@
+"I'd like to share my recent experience interviewing for a Cloud Engineer position at LTIMindtree .
+Below are some of the questions that were asked, which may serve as valuable preparation for those pursuing similar roles."
+
+1. Can you describe the key roles and responsibilities in your current organization?
+
+2. What is Blob storage?
+
+3. What is Table storage?
+
+4. How many types of storage are there and briefly describe them?
+
+5. Differentiate between Azure logs and Azure monitor?
+
+6. Define Azure Kubernetes Service?
+
+7. What is Azure Scale Set and Availability Set?
+
+8. What is Azure function and Azure monitor?
+
+9. What is Platform as a Service and mention an example of it?
+
+10. Can you provide an overview of the SOPs you have developed, including their names and quantities?
+
+11. What tools do you use for monitoring and ticketing purposes? 
+
+12. Can you describe the situations and scenarios where you have implemented changes in OpsRamp?
+
+13. Is it possible to configure passwordless access to a Linux machine?
+
+14. A company needs to securely connect its on-prem Active Directory with Azure AD. Walk me through your integration process.
